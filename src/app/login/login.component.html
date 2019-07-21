@@ -1,0 +1,15 @@
+<div id="form">
+    <form  #formEmpleado="ngForm" (ngSubmit)="submit()" >
+        <div>
+            <label>Email: </label><input type="text" name="email" #nombre="ngModel" [(ngModel)]="email" pattern="[a-zA-ZñÑ]+@[a-zA-ZñÑ]+.[a-zA-ZñÑ]{2,3}" required>
+            
+        </div>
+        <div>
+            <label>Contraseña: </label><input type="password" name="contra" #puesto="ngModel" [(ngModel)]="contra" required>
+        </div>
+        <p id="error" *ngIf="!valido">Puesto no valido</p>
+        <p id="error" *ngIf="valido"></p>
+        <input type="submit" value="Iniciar sesión" [disabled]="!formEmpleado.form.valid">
+    </form>
+    <button id="registro" (click)="registro()">Registrarse</button>
+</div>

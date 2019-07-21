@@ -1,0 +1,12 @@
+	<header id="header" class="col-lg-12">
+        <h1>Marketplaza</h1>
+    </header>
+    <div id="color">
+        <nav id="nav" class="col-lg-12">
+            <input type="text" name="puesto" >
+            <button id="buscar">Bus</button>
+                <a [routerLink]="['/empleados']" [routerLinkActive]="['activado']">Carro</a>
+                <a [routerLink]="['/addempleados']" [routerLinkActive]="['activado']">User</a>
+        </nav>
+    </div>
+<router-outlet></router-outlet>

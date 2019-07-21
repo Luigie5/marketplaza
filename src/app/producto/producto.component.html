@@ -1,0 +1,46 @@
+<div id="centrar">
+
+</div>
+<div id="mitad-izquierda">
+    <img src="../../assets/icons/carro.png">
+    
+</div>
+<div id="mitad-derecha">
+    <h1>{{producto.titulo}}</h1>
+    <p>{{producto.descripcion}}</p>
+    <div>
+        <label id="precio" *ngIf="producto.precio % 1 == 0">{{producto.precio}}.00€</label>
+        <label id="precio" *ngIf="!(producto.precio % 1 == 0)">{{producto.precio}}€</label>
+        <button><img src="../../assets/icons/addcarro.png" width="40px"></button>
+        <div id="estrellas1">
+            <div id="estrella1" *ngFor='let i of "12345".split("")'>
+                <img  *ngIf="media <i" src="../../assets/icons/user.png" width="30px">
+                <img  *ngIf="media >= i" src="../../assets/icons/addcarro.png" width="30px">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div id="for" *ngFor="let comentario of comentarios">
+        <div id="user-icon">
+            <img  src="../../assets/icons/user.png" width="50px"><br>
+            <label>{{comentario.userID}}sadasda</label>
+        </div>
+        <p id="comment">{{comentario.comentario}}</p>
+        <div id="estrellas">
+            <div id="estrella" *ngFor='let i of "12345".split("")'>
+                <img  *ngIf="comentario.valoracion <i" src="../../assets/icons/user.png" width="20px">
+                <img  *ngIf="comentario.valoracion >= i" src="../../assets/icons/addcarro.png" width="20px">
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div>
+        <input id="comentario" type="text">
+        <button id="comentar">Enviar</button>
+        <div id="estrellas-edit">
+            <div id="estrella" *ngFor='let i of "12345".split("")'>
+                <img src="../../assets/icons/user.png" width="20px">
+            </div>
+        </div>
+    </div>
+</div>

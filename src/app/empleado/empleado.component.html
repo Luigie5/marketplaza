@@ -1,0 +1,17 @@
+<h1>Lista Empleados</h1>
+<h2 *ngIf="parametro">{{parametro}}</h2>
+<!--<input type="text" [(ngModel)]="busqueda"/>-->
+
+<!--<button (click)="nuevoEmpleado()">Añadir</button>-->
+<ul>
+    <li *ngFor="let empleado of trabajadores; let i=index">
+        <h4>Empleado {{i+1}}: <button (click)="eliminarEmpleadoAPI(i)">Eliminar</button></h4>
+        
+        <ul>
+            <li>{{empleado.nombre}}</li>
+            <li>{{empleado.edad}}</li>
+            <li>{{empleado.puesto}}</li>
+        </ul>
+    </li>
+</ul>
+<hr/>

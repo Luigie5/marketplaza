@@ -1,0 +1,17 @@
+<h1>Añadir empleados</h1>
+<form #formEmpleado="ngForm" (ngSubmit)="nuevoEmpleadoFormAPI();formEmpleado.reset()" >
+    <div>
+        <label>Nombre</label><input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="empleado.nombre" pattern="[a-zA-ZñÑ]+" required>
+        <span *ngIf="nombre.touched && !nombre.valid">Nombre no valido</span>
+    </div>
+    <div>
+        <label>Edad</label><input type="text" name="edad" #edad="ngModel" [(ngModel)]="empleado.edad" pattern="[0-9]+" required>
+        <span *ngIf="edad.touched && !edad.valid">Edad no valida</span>
+    </div>
+    <div>
+        <label>Puesto</label><input type="text" name="puesto" #puesto="ngModel" [(ngModel)]="empleado.puesto" pattern="[a-zA-ZñÑ]+" required>
+        <span *ngIf="puesto.touched && !puesto.valid">Puesto no valido</span>
+    </div>
+    <input type="submit" value="Guardar" [disabled]="!formEmpleado.form.valid">
+</form>
+<hr/>
