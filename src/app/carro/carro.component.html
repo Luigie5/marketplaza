@@ -1,0 +1,31 @@
+<div id="centrar">
+    <table>
+        <tr>
+            <th style="width: 80%">Producto</th>
+            <th style="width: 10%">Precio</th>
+            <th style="width: 10%">Cantidad</th>
+        </tr>
+        <tr  *ngFor="let producto of productos; let i=index">
+            <td>
+                <img style="float: left" src={{producto.imagen}} height="70px">
+                <div style="margin-left: 90px;margin-top: -10px">
+                    <p>{{producto.titulo}}</p>
+                    <button (click)="eliminar(i)">Eliminar</button>
+                </div>
+            </td>
+            <td>{{producto.precio}}€</td>
+            <td>
+                <select *ngIf="valor[i]<10 && tocado" [(ngModel)]="valor[i]" (change)="calcularTotal();valorar(i)">
+                    <option *ngFor='let j of "123456789".split("")' value={{j}}>{{j}}</option>
+                    <option  value=10>10+</option>
+                </select>
+                <input type="number" *ngIf="valor[i]>=10 || tocado==false" style="width: 80%" (change)="calcularTotal()" [(ngModel)]="valor[i]">
+            </td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td>{{total}}€</td>
+            <td></td>
+        </tr>
+    </table>
+</div>

@@ -9,10 +9,14 @@ import {VacioComponent} from './vacio/vacio.component';
 import {LoginComponent} from './login/login.component';
 import {HttpModule} from "@angular/http";
 import {HomeComponent} from './home/home.component';
+import {CarroComponent} from './carro/carro.component';
 import {ProductoComponent} from './producto/producto.component';
+
+
 @NgModule({
   imports:      [ BrowserModule, FormsModule, routing, HttpModule],
-  declarations: [ AppComponent , EmpleadoComponent,VacioComponent,AddEmpleadoComponent,LoginComponent,HomeComponent,ProductoComponent],
+  declarations: [ AppComponent , EmpleadoComponent,VacioComponent,
+    AddEmpleadoComponent,LoginComponent,HomeComponent,ProductoComponent,CarroComponent],
   bootstrap:    [ AppComponent ],
   providers:    [appRoutingProviders ]
 })
