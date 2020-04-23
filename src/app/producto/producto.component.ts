@@ -15,6 +15,11 @@ export class ProductoComponent  {
     public id:String;
     public media=2;
     public comentarios:Array<Comentario>;
+    public comentary:String="";
+    public valoracion:number=1;
+    public valoracionFin:number=1;
+    public imagen:String="../../assets/icons/carro.png";
+    public imagenes:Array<String>=["../../assets/icons/carro.png","../../assets/icons/user.png"];
     constructor( private _router:Router,
         private _route: ActivatedRoute,){
         this.producto=new Producto(1,"titulo",this.str,"../../assets/icons/carro.png","../../assets/icons/carro.png",5.52);
@@ -26,5 +31,18 @@ export class ProductoComponent  {
         });
         //this._empleadoService= new EmpleadoService();
         //this.trabajadores= this._empleadoService.getEmpleados();
+    }
+    entrar(numero:number){
+        this.valoracion=numero;
+    }
+    salir(numero:number){
+        this.valoracion=this.valoracionFin;
+    }
+    valorar(numero:number){
+        this.valoracion=numero;
+        this.valoracionFin=numero;
+    }
+    cambiarImagen(numero:number){
+        this.imagen=this.imagenes[numero];
     }
 }

@@ -2,7 +2,13 @@
 
 </div>
 <div id="mitad-izquierda">
-    <img src="../../assets/icons/carro.png">
+    <div>
+        <img class="imagen" src={{imagen}}>
+        <img class="imagenes" src="../../assets/icons/carro.png" (mouseenter)="cambiarImagen(0)">
+        <img class="imagenes" src="../../assets/icons/user.png" (mouseenter)="cambiarImagen(1)">
+        <img class="imagenes" src="../../assets/icons/carro.png" (mouseenter)="cambiarImagen(0)">
+        <img class="imagenes" src="../../assets/icons/user.png" (mouseenter)="cambiarImagen(1)">
+    </div>
     
 </div>
 <div id="mitad-derecha">
@@ -35,12 +41,15 @@
         <hr>
     </div>
     <div>
-        <input id="comentario" type="text">
-        <button id="comentar">Enviar</button>
+        <textarea id="comentario" [(ngModel)]="comentary"  cols="30" rows="5" type="text"></textarea>
+        
         <div id="estrellas-edit">
-            <div id="estrella" *ngFor='let i of "12345".split("")'>
-                <img src="../../assets/icons/user.png" width="20px">
+            <div id="estrella" *ngFor='let i of "12345".split("")' (mouseenter)="entrar(i)" (mouseleave)="salir(i)" (click)="valorar(i)">
+                <img  *ngIf="valoracion <i" src="../../assets/icons/user.png" width="20px">
+                <img  *ngIf="valoracion >= i" src="../../assets/icons/addcarro.png" width="20px">
             </div>
+            
         </div>
+        <button id="comentar">Enviar</button>
     </div>
 </div>
